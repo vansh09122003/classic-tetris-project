@@ -13,7 +13,7 @@ class GetCountryCommand(Command):
         if platform_user and user.country:
             self.send_message("{user_tag} is from {country}!".format(
                 user_tag=platform_user.user_tag,
-                country=Country.get_country(user.country).full_name
+                country=Country.get_country(user_tag.country).full_name
             ))
         else:
             self.send_message("User has not set a country.")
